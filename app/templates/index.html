@@ -1,0 +1,197 @@
+{% extends "base.html" %} {% block extra_styles %} /* Additional styles specific
+to the home page */ html { direction: rtl; } .hero { position: relative;
+background-image: url('/static/Images/landing.jpg'); background-size: cover;
+background-position: center; background-repeat: no-repeat; color: white;
+padding: 120px 0; text-align: center; } .hero::before { content: ''; position:
+absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0,
+0.5); z-index: 1; } .hero-content { position: relative; z-index: 2; max-width:
+800px; margin: 0 auto; padding: 0 15px; } .hero h1 { font-size: 3rem;
+font-weight: 700; margin-bottom: 20px; } .hero p { font-size: 1.2rem;
+margin-bottom: 30px; } .features { padding: 80px 0; } .section-title {
+text-align: center; margin-bottom: 50px; } .section-title h2 { font-size:
+2.5rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 15px; }
+.section-title p { color: #777; max-width: 700px; margin: 0 auto; } .feature-box
+{ background-color: white; border-radius: var(--border-radius); box-shadow:
+var(--box-shadow); padding: 30px; margin-bottom: 30px; transition:
+var(--transition); text-align: center; height: 100%; cursor: pointer; }
+.feature-box:hover { transform: translateY(-10px); } .feature-icon { font-size:
+2.5rem; color: var(--primary-color); margin-bottom: 20px; } .feature-title {
+font-weight: 600; margin-bottom: 15px; color: var(--secondary-color); }
+.cta-section { background-color: var(--primary-color); padding: 80px 0; color:
+white; text-align: center; } .cta-section h2 { font-size: 2.5rem; font-weight:
+700; margin-bottom: 20px; } .cta-section p { font-size: 1.1rem; max-width:
+700px; margin: 0 auto 30px; } .btn-white { background-color: white; color:
+var(--primary-color); font-weight: 600; padding: 12px 25px; border-radius:
+var(--border-radius); transition: var(--transition); } .btn-white:hover {
+background-color: var(--secondary-color); color: white; } .stats-section {
+padding: 80px 0; } .stat-box { text-align: center; padding: 20px; } .stat-number
+{ font-size: 3rem; font-weight: 700; color: var(--primary-color); margin-bottom:
+10px; } .stat-label { color: var(--secondary-color); font-weight: 600; } {%
+endblock %} {% block content %}
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>نحن بيئة بلا نفايات</h1>
+    <p>
+      "إعادة التدوير ليست مجرد خيار، بل هي ضرورة لبناء مستقبل مستدام، حيث تتحول
+      النفايات إلى موارد وتصبح الأرض أكثر صحة للأجيال القادمة."
+    </p>
+    <a href="{{ url_for('get_our_services') }}" class="btn btn-primary btn-lg"
+      >احصل على خدماتنا</a
+    >
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+  <div class="container">
+    <div class="section-title">
+      <h2>خدماتنا المميزة</h2>
+      <p>
+        نقدم مجموعة متكاملة من الحلول البيئية التي تساعد في الحفاظ على كوكبنا
+      </p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="feature-box">
+          <div class="feature-icon">
+            <i class="fas fa-recycle"></i>
+          </div>
+          <h3 class="feature-title">إعادة التدوير</h3>
+          <p>
+            نقوم بتحويل المخلفات إلى موارد قيّمة من خلال عمليات إعادة تدوير
+            متطورة وصديقة للبيئة.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="feature-box">
+          <div class="feature-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h3 class="feature-title">توعية بيئية</h3>
+          <p>
+            نشر الوعي البيئي من خلال ورش عمل وندوات تعليمية للمجتمعات والمدارس
+            والشركات.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="feature-box">
+          <div class="feature-icon">
+            <i class="fas fa-trash-alt"></i>
+          </div>
+          <h3 class="feature-title">إدارة النفايات</h3>
+          <p>
+            خدمات متكاملة لإدارة النفايات بطريقة فعّالة وصديقة للبيئة للمؤسسات
+            والشركات.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<!-- <section class="stats-section bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="stat-box">
+          <div class="stat-number" data-count="5000">0</div>
+          <div class="stat-label">عميل راضٍ</div>
+        </div>
+      </div>
+      
+      <div class="col-md-3">
+        <div class="stat-box">
+          <div class="stat-number" data-count="200">0</div>
+          <div class="stat-label">مشروع مكتمل</div>
+        </div>
+      </div>
+      
+      <div class="col-md-3">
+        <div class="stat-box">
+          <div class="stat-number" data-count="10000">0</div>
+          <div class="stat-label">طن تم إعادة تدويره</div>
+        </div>
+      </div>
+      
+      <div class="col-md-3">
+        <div class="stat-box">
+          <div class="stat-number" data-count="50">0</div>
+          <div class="stat-label">خبير بيئي</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- Call to Action Section -->
+<section class="cta-section">
+  <div class="container">
+    <h2>هل أنت مستعد لدعم البيئة؟</h2>
+    <p>
+      انضم إلينا اليوم واحصل على خدماتنا المميزة في إعادة التدوير وإدارة
+      المخلفات. معًا نستطيع بناء مستقبل أفضل ومستدام.
+    </p>
+    <a href="{{ url_for('contact_us') }}" class="btn btn-white btn-lg"
+      >تواصل معنا</a
+    >
+  </div>
+</section>
+{% endblock %} {% block scripts %}
+<script>
+  // Animate stats counter when in viewport
+  document.addEventListener("DOMContentLoaded", function () {
+    const stats = document.querySelectorAll(".stat-number");
+    const animateStats = () => {
+      stats.forEach((stat) => {
+        const value = parseInt(stat.getAttribute("data-count"));
+        let current = 0;
+        const increment = value / 50;
+        const timer = setInterval(() => {
+          current += increment;
+          if (current > value) {
+            clearInterval(timer);
+            stat.textContent = value;
+          } else {
+            stat.textContent = Math.floor(current);
+          }
+        }, 30);
+      });
+    };
+
+    // Check if element is in viewport
+    const isInViewport = (el) => {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <=
+          (window.innerWidth || document.documentElement.clientWidth)
+      );
+    };
+
+    // Animate when scrolled into view
+    let animated = false;
+    window.addEventListener("scroll", () => {
+      if (!animated && isInViewport(document.querySelector(".stats-section"))) {
+        animateStats();
+        animated = true;
+      }
+    });
+
+    // Check on load
+    if (isInViewport(document.querySelector(".stats-section"))) {
+      animateStats();
+      animated = true;
+    }
+  });
+</script>
+{% endblock %}

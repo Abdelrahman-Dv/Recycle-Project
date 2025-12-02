@@ -1,0 +1,258 @@
+/* Start Variable */
+:root {
+  --main-color: #2c5f2d;
+  --transparent-color: rgba(0, 162, 11, 0.573);
+  --second-color: #00a780;
+}
+/* End Variable */
+
+/* Start Global Rules */
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* End Global Rules */
+/* Start Components */
+.sconed-title {
+  text-align: center;
+  position: relative;
+  padding: 20px 0;
+  color: white;
+  width: fit-content;
+  margin: auto;
+}
+
+.sconed-title::before,
+.sconed-title::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  top: 48%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+.sconed-title::before {
+  left: 75px;
+}
+.sconed-title::after {
+  right: 75px;
+}
+
+/* End */
+/* Start Header */
+header {
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  min-width: 97px;
+}
+
+header .logo img {
+  height: 92px;
+}
+
+header nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header nav .toggle-menu {
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 767px) {
+  header nav .toggle-menu {
+    display: block;
+  }
+
+  header nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background-color: #0c170b;
+  }
+
+  header nav ul li a {
+    padding: 15px !important;
+    text-align: center;
+  }
+
+  header nav ul.active {
+    display: none;
+  }
+}
+
+header nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 40px 10px;
+  transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+  color: black;
+}
+/* End Header */
+
+/* Start Services */
+.services {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  height: 100vh;
+  background-color: #00a780;
+  cursor: pointer;
+}
+.services .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+.services .serv {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #eee;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
+  -moz-transition: transform 0.3s ease-in-out;
+  -ms-transition: transform 0.3s ease-in-out;
+  -o-transition: transform 0.3s ease-in-out;
+}
+.services .serv:hover {
+  transform: translateY(-5px);
+}
+
+.services .circle {
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-in-out;
+}
+.services .circle:hover {
+  background-color: #00a780;
+}
+.services .circle i {
+  font-size: 35px;
+  color: black;
+  transition: color 0.3s ease-in-out;
+}
+.services .circle i:hover {
+  color: white;
+}
+.text {
+  flex: 1;
+}
+.text .com {
+  margin: 0;
+  font-family: "Montserrat", serif;
+  font-weight: bold;
+  font-size: 18;
+}
+.text .shi {
+  font-family: "Farsan", serif;
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #444;
+}
+/* End Services */
+/* start footer */
+.footer {
+  background-color: #00a780;
+  color: white;
+  padding: 30px 10px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.footer span {
+  font-weight: bold;
+  color: #fff;
+}
+
+/* end footer */

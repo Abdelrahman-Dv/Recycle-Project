@@ -1,0 +1,157 @@
+{% extends "base.html" %} {% block title %}من نحن - MCI{% endblock %} {% block
+extra_styles %} .page-hero { position: relative; height: 40vh; min-height:
+300px; background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+url('/static/Images/who-we.jpg') no-repeat center center; background-size:
+cover; display: flex; align-items: center; justify-content: center; text-align:
+center; color: white; margin-bottom: 50px; } .page-hero h1 { font-size: 3rem;
+font-weight: 700; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); } .section-title
+{ text-align: center; margin-bottom: 50px; position: relative; } .section-title
+h2 { font-size: 2.5rem; font-weight: 700; color: var(--primary-color);
+margin-bottom: 15px; display: inline-block; position: relative; } .section-title
+h2::after { content: ""; position: absolute; bottom: -10px; left: 50%;
+transform: translateX(-50%); width: 80px; height: 3px; background-color:
+var(--primary-color); } .about-section { padding: 70px 0; } .about-card {
+background-color: white; border-radius: var(--border-radius); box-shadow:
+var(--box-shadow); overflow: hidden; transition: var(--transition); height:
+100%; margin-bottom: 30px; } .about-card:hover { transform: translateY(-10px);
+box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); } .about-card-img { position:
+relative; overflow: hidden; height: 220px; } .about-card-img img { width: 100%;
+height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.about-card:hover .about-card-img img { transform: scale(1.1); }
+.about-card-content { padding: 25px; } .about-card-content h3 { font-size:
+1.4rem; color: var(--secondary-color); margin-bottom: 15px; font-weight: 600; }
+.about-card-content p { color: #666; line-height: 1.7; text-align: right; }
+.mission-section { padding: 70px 0; background-color: #f9f9f9; text-align:
+center; } .mission-content { max-width: 800px; margin: 0 auto; }
+.mission-content h2 { font-size: 2.2rem; color: var(--secondary-color);
+margin-bottom: 20px; } .mission-content p { font-size: 1.1rem; color: #666;
+line-height: 1.8; margin-bottom: 30px; } .values { display: flex; flex-wrap:
+wrap; justify-content: center; gap: 30px; margin-top: 40px; } .value-item {
+background-color: white; border-radius: var(--border-radius); padding: 20px;
+box-shadow: var(--box-shadow); width: 200px; text-align: center; transition:
+var(--transition); } .value-item:hover { transform: translateY(-5px);
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); } .value-icon { font-size: 2.5rem;
+color: var(--primary-color); margin-bottom: 15px; } .value-title { font-weight:
+600; font-size: 1.1rem; color: var(--secondary-color); } @media (max-width:
+768px) { .page-hero h1 { font-size: 2.2rem; } .section-title h2 { font-size:
+2rem; } .value-item { width: calc(50% - 15px); } } {% endblock %} {% block
+content %}
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <h1>من نحن</h1>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>تعرف علينا</h2>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="about-card">
+          <div class="about-card-img">
+            <img src="/static/Images/who we are.jpg" alt="من نحن" />
+          </div>
+          <div class="about-card-content">
+            <h3>من نحن؟</h3>
+            <p>
+              نحن فريق شغوف بحماية البيئة وتحقيق الاستدامة من خلال إعادة تدوير
+              المخلفات. هدفنا هو خلق حلول مبتكرة لتحويل النفايات إلى موارد قيمة،
+              مع تعزيز الوعي البيئي في مجتمعاتنا. منذ انطلاقنا في عام 2024،
+              نجحنا في تقليل التأثير السلبي للنفايات على البيئة من خلال شراكات
+              استراتيجية وخدمات مخصصة.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="about-card">
+          <div class="about-card-img">
+            <img src="/static/Images/who we are 2.jpg" alt="الاستدامة" />
+          </div>
+          <div class="about-card-content">
+            <h3>الاستدامة: طريقنا نحو المستقبل</h3>
+            <p>
+              الاستدامة ليست مجرد كلمة، بل هي نهج حياة نسعى من خلاله لتحقيق
+              التوازن بين احتياجات اليوم ومتطلبات الغد. نؤمن بأن الموارد
+              الطبيعية هي ثروة يجب الحفاظ عليها، وأن إعادة التدوير هي واحدة من
+              أهم الأدوات التي تساعدنا على تقليل الاستنزاف المفرط لهذه الموارد.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="about-card">
+          <div class="about-card-img">
+            <img src="/static/Images/who we are 3.jpg" alt="التوعية البيئية" />
+          </div>
+          <div class="about-card-content">
+            <h3>التوعية البيئية: معًا نحو بيئة نظيفة</h3>
+            <p>
+              التوعية البيئية هي حجر الأساس في رحلتنا نحو بناء مستقبل أكثر
+              استدامة ونظافة. إن الحفاظ على البيئة يبدأ من وعي الأفراد
+              والمجتمعات بدورهم في حماية كوكبنا. نحن نسعى لنشر المعرفة والثقافة
+              البيئية لجعل الحفاظ على البيئة جزءًا أساسيًا من حياتنا اليومية.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission Section -->
+<section class="mission-section">
+  <div class="container">
+    <div class="mission-content">
+      <h2>رسالتنا ورؤيتنا</h2>
+      <p>
+        نسعى لأن نكون رواد التغيير في مجال إدارة النفايات وإعادة التدوير، من
+        خلال توفير حلول مبتكرة ومستدامة تساهم في الحفاظ على البيئة وتحسين جودة
+        الحياة للأجيال الحالية والقادمة.
+      </p>
+      <p>
+        رؤيتنا هي بناء مجتمع واعٍ بأهمية الاستدامة وإعادة التدوير، حيث تُدار
+        النفايات بطريقة فعّالة وصديقة للبيئة، وتُستغل كموارد قيّمة بدلاً من
+        التخلص منها.
+      </p>
+
+      <div class="values">
+        <div class="value-item">
+          <div class="value-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <div class="value-title">الاستدامة</div>
+        </div>
+
+        <div class="value-item">
+          <div class="value-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <div class="value-title">الابتكار</div>
+        </div>
+
+        <div class="value-item">
+          <div class="value-icon">
+            <i class="fas fa-hands-helping"></i>
+          </div>
+          <div class="value-title">المسؤولية</div>
+        </div>
+
+        <div class="value-item">
+          <div class="value-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="value-title">التعاون</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

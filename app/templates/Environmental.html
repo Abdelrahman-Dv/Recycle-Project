@@ -1,0 +1,378 @@
+{% extends "base.html" %} {% block title %}توعية بيئية - MCI{% endblock %} {%
+block extra_styles %} .page-hero { position: relative; height: 40vh; min-height:
+300px; background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+url('/static/Images/enviro.jpg') no-repeat center center; background-size:
+cover; display: flex; align-items: center; justify-content: center; text-align:
+center; color: white; margin-bottom: 50px; } .page-hero h1 { font-size: 3rem;
+font-weight: 700; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); }
+.environmental-section { padding: 70px 0; background-color: #f9f9f9; }
+.section-title { text-align: center; margin-bottom: 50px; position: relative; }
+.section-title h2 { font-size: 2.5rem; font-weight: 700; color:
+var(--primary-color); margin-bottom: 15px; display: inline-block; position:
+relative; } .section-title h2::after { content: ""; position: absolute; bottom:
+-10px; left: 50%; transform: translateX(-50%); width: 80px; height: 3px;
+background-color: var(--primary-color); } .video-card { background-color: white;
+border-radius: var(--border-radius); overflow: hidden; box-shadow:
+var(--box-shadow); transition: var(--transition); height: 100%; border: none; }
+.video-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px
+rgba(0, 0, 0, 0.1); } .video-container { position: relative; overflow: hidden;
+padding-top: 56.25%; /* 16:9 Aspect Ratio */ } .video-container iframe {
+position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.video-card .card-body { padding: 20px; } .video-card .card-title { color:
+var(--secondary-color); font-size: 1.3rem; font-weight: 600; margin-bottom:
+15px; line-height: 1.4; } .video-card .card-text { color: #666; line-height:
+1.7; text-align: right; } .video-card .card-footer { background-color:
+transparent; border-top: 1px solid #eee; padding: 15px 20px; color:
+var(--primary-color); font-weight: 500; display: flex; justify-content:
+space-between; align-items: center; } .video-card .card-footer .date { color:
+#888; font-size: 0.9rem; } .video-card .card-footer .share { display: flex; gap:
+10px; } .video-card .card-footer .share a { color: #888; font-size: 1rem;
+transition: var(--transition); } .video-card .card-footer .share a:hover {
+color: var(--primary-color); } .tab-filter { display: flex; justify-content:
+center; margin-bottom: 30px; flex-wrap: wrap; } .tab-filter button { background:
+none; border: none; padding: 10px 20px; margin: 0 5px 10px; border-radius:
+var(--border-radius); font-weight: 600; color: #666; transition:
+var(--transition); cursor: pointer; } .tab-filter button.active {
+background-color: var(--primary-color); color: white; } .tab-filter
+button:hover:not(.active) { background-color: #eee; } .load-more { display:
+block; margin: 40px auto 0; background-color: var(--primary-color); color:
+white; border: none; padding: 12px 30px; font-size: 1rem; font-weight: 600;
+border-radius: var(--border-radius); cursor: pointer; transition:
+var(--transition); } .load-more:hover { background-color: #219653; transform:
+translateY(-3px); box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3); } @media
+(max-width: 768px) { .page-hero h1 { font-size: 2.2rem; } .section-title h2 {
+font-size: 2rem; } .video-card .card-title { font-size: 1.2rem; } } {% endblock
+%} {% block content %}
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <h1>توعية بيئية</h1>
+  </div>
+</section>
+
+<!-- Environmental Awareness Section -->
+<section class="environmental-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>توعية بيئية</h2>
+    </div>
+
+    <div class="tab-filter">
+      <button class="active" data-filter="all">الكل</button>
+      <button data-filter="environment">البيئة</button>
+      <button data-filter="plastic">البلاستيك</button>
+      <button data-filter="recycling">إعادة التدوير</button>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <!-- Video Card 1 -->
+      <div class="col" data-category="environment">
+        <div class="video-card">
+          <div class="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/wvWSBxDNiqY"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">الحفاظ على البيئة</h5>
+            <p class="card-text">
+              هذا الفيديو يعبر عن الأخطار التي يتعرض لها كوكب الأرض بسبب ما
+              يفسده الإنسان، وكيف أن الإسلام يُقرّ ويدعونا لحلول عملية إذا التزم
+              بها أهل الأرض لأزلنا الضرر عن البيئة التي نعيش فيها.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="date">
+              <i class="far fa-calendar-alt"></i> 12 ديسمبر 2016
+            </div>
+            <div class="share">
+              <a href="#" title="مشاركة على فيسبوك"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" title="مشاركة على تويتر"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" title="مشاركة عبر واتساب"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Card 2 -->
+      <div class="col" data-category="plastic">
+        <div class="video-card">
+          <div class="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/4sJGJ7Wu2YQ"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">
+              الأرض في خطر - فيديو توعوي حول التلوث البيئي بلاستك
+            </h5>
+            <p class="card-text">
+              لمادا البلاستيك قادر على تدمير الحياة على الارض، حيث يعتبر مصدر
+              رئيسي للتلوث البيئي. يوضح الفيديو كيف يمكن أن يؤثر البلاستيك على
+              مختلف مكونات البيئة والكائنات الحية.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="date">
+              <i class="far fa-calendar-alt"></i> 18 ديسمبر 2019
+            </div>
+            <div class="share">
+              <a href="#" title="مشاركة على فيسبوك"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" title="مشاركة على تويتر"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" title="مشاركة عبر واتساب"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Card 3 -->
+      <div class="col" data-category="environment">
+        <div class="video-card">
+          <div class="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/1P-OjoRNP08"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">
+              أهمية الحفاظ على البيئة ( بيئتنا ثروتنا )
+            </h5>
+            <p class="card-text">
+              أهمية الحفاظ على البيئة (بيئتنا ثروتنا) تُعد قضية حيوية ومصيرية
+              للحياة على كوكب الأرض. البيئة هي النظام الذي يدعم كل أشكال الحياة،
+              بما في ذلك البشر، والحيوانات، والنباتات.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="date">
+              <i class="far fa-calendar-alt"></i> 13 أغسطس 2020
+            </div>
+            <div class="share">
+              <a href="#" title="مشاركة على فيسبوك"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" title="مشاركة على تويتر"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" title="مشاركة عبر واتساب"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Card 4 -->
+      <div class="col" data-category="recycling">
+        <div class="video-card">
+          <div class="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/yw2RYXQl6mM"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">طرق إعادة تدوير المخلفات المنزلية</h5>
+            <p class="card-text">
+              يقدم الفيديو طرقًا عملية وسهلة لإعادة تدوير المخلفات المنزلية، مما
+              يساعد في تقليل النفايات والحفاظ على البيئة وتحويل المواد المستخدمة
+              إلى منتجات مفيدة مرة أخرى.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="date">
+              <i class="far fa-calendar-alt"></i> 5 مارس 2022
+            </div>
+            <div class="share">
+              <a href="#" title="مشاركة على فيسبوك"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" title="مشاركة على تويتر"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" title="مشاركة عبر واتساب"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Card 5 -->
+      <div class="col" data-category="plastic">
+        <div class="video-card">
+          <div class="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/HQTUWK7CM-Y"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">البدائل الصديقة للبيئة للبلاستيك</h5>
+            <p class="card-text">
+              يستعرض الفيديو بدائل متعددة للبلاستيك، أكثر صداقة للبيئة ويمكن
+              استخدامها في الحياة اليومية للمساهمة في تقليل التلوث البلاستيكي
+              والحفاظ على البيئة.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="date">
+              <i class="far fa-calendar-alt"></i> 22 أبريل 2023
+            </div>
+            <div class="share">
+              <a href="#" title="مشاركة على فيسبوك"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" title="مشاركة على تويتر"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" title="مشاركة عبر واتساب"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Card 6 -->
+      <div class="col" data-category="recycling">
+        <div class="video-card">
+          <div class="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/UmOXihj-6eA"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">كيف تساهم إعادة التدوير في حماية البيئة</h5>
+            <p class="card-text">
+              شرح تفصيلي لأهمية إعادة التدوير وتأثيرها الإيجابي على البيئة، من
+              خلال توفير الموارد الطبيعية وتقليل التلوث والحد من انبعاثات
+              الغازات الدفيئة.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="date">
+              <i class="far fa-calendar-alt"></i> 17 يناير 2024
+            </div>
+            <div class="share">
+              <a href="#" title="مشاركة على فيسبوك"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" title="مشاركة على تويتر"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" title="مشاركة عبر واتساب"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="load-more">عرض المزيد</button>
+  </div>
+</section>
+{% endblock %} {% block scripts %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Category filtering
+    const filterButtons = document.querySelectorAll(".tab-filter button");
+    const videoCards = document.querySelectorAll(".col[data-category]");
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        // Remove active class from all buttons
+        filterButtons.forEach((btn) => btn.classList.remove("active"));
+
+        // Add active class to clicked button
+        this.classList.add("active");
+
+        // Get filter value
+        const filter = this.getAttribute("data-filter");
+
+        // Show/hide cards based on filter
+        videoCards.forEach((card) => {
+          if (
+            filter === "all" ||
+            card.getAttribute("data-category") === filter
+          ) {
+            card.style.display = "block";
+            setTimeout(() => {
+              card.style.opacity = 1;
+              card.style.transform = "translateY(0)";
+            }, 100);
+          } else {
+            card.style.opacity = 0;
+            card.style.transform = "translateY(20px)";
+            setTimeout(() => {
+              card.style.display = "none";
+            }, 300);
+          }
+        });
+      });
+    });
+
+    // Animation for video cards when they come into view
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    videoCards.forEach((card) => {
+      card.style.opacity = 0;
+      card.style.transform = "translateY(20px)";
+      card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+      observer.observe(card);
+    });
+
+    // Load more button functionality (demo - in production would load actual content)
+    const loadMoreBtn = document.querySelector(".load-more");
+    let clickCount = 0;
+
+    loadMoreBtn.addEventListener("click", function () {
+      clickCount++;
+      if (clickCount >= 2) {
+        this.disabled = true;
+        this.textContent = "لا يوجد المزيد من الفيديوهات";
+        this.style.backgroundColor = "#999";
+      } else {
+        this.textContent = "جاري التحميل...";
+        setTimeout(() => {
+          this.textContent = "عرض المزيد";
+          alert("تم تحميل محتوى إضافي (هذه نسخة تجريبية)");
+        }, 1500);
+      }
+    });
+  });
+</script>
+{% endblock %}

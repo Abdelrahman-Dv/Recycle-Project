@@ -1,0 +1,294 @@
+{% extends "base.html" %} {% block title %}أحصل على خدماتنا - MCI{% endblock %}
+{% block extra_styles %} .page-hero { position: relative; height: 40vh;
+min-height: 300px; background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0,
+0.5)), url('/static/Images/web.jpg') no-repeat center center; background-size:
+cover; display: flex; align-items: center; justify-content: center; text-align:
+center; color: white; margin-bottom: 50px; } .page-hero h1 { font-size: 3rem;
+font-weight: 700; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); } .contact {
+padding: 50px 0 100px; background: linear-gradient(to bottom, #f9f9f9, #eef7ee);
+direction: rtl; } .service-form-wrapper { max-width: 900px; margin: 0 auto;
+background-color: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0,
+0, 0.1); overflow: hidden; } .form-header { background-color:
+var(--primary-color); color: white; padding: 30px; text-align: center; }
+.form-header .title { font-size: 28px; margin-bottom: 10px; } .form-header
+.subtitle { font-size: 16px; opacity: 0.8; } .modern-form { padding: 30px; }
+.form-section { margin-bottom: 40px; } .section-title { font-size: 20px; color:
+var(--primary-color); margin-bottom: 10px; position: relative; padding-right:
+15px; } .section-title::before { content: ''; position: absolute; right: 0; top:
+50%; transform: translateY(-50%); width: 5px; height: 20px; background-color:
+var(--primary-color); border-radius: 5px; } .section-desc { color: #666;
+margin-bottom: 20px; font-size: 14px; } .user-details { display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;
+margin-top: 20px; } .input-box { margin-bottom: 20px; } .input-box label {
+display: block; font-weight: 500; margin-bottom: 8px; color: #333; }
+.input-container { position: relative; display: flex; align-items: center; }
+.input-container i { position: absolute; right: 15px; color:
+var(--primary-color); } .input-container input { width: 100%; padding: 15px 45px
+15px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;
+transition: all 0.3s; } .input-container input:focus { border-color:
+var(--primary-color); box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2); outline:
+none; } .input-container input::placeholder { color: #aaa; } .services-grid {
+display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+gap: 20px; margin-top: 20px; } .service-option { position: relative; cursor:
+pointer; } .service-option input { position: absolute; opacity: 0; cursor:
+pointer; } .service-card { background-color: #f9f9f9; border: 2px solid #eee;
+border-radius: 10px; padding: 20px; height: 100%; display: flex; flex-direction:
+column; align-items: center; transition: all 0.3s; position: relative; overflow:
+hidden; } .service-icon { width: 60px; height: 60px; background-color: rgba(39,
+174, 96, 0.1); border-radius: 50%; display: flex; align-items: center;
+justify-content: center; margin-bottom: 15px; } .service-icon i { font-size:
+24px; color: var(--primary-color); } .service-info { text-align: center;
+font-weight: 500; color: #333; } .check-indicator { position: absolute; top:
+10px; left: 10px; width: 20px; height: 20px; border: 2px solid #ddd;
+border-radius: 50%; transition: all 0.3s; } .service-option input:checked +
+.service-card { border-color: var(--primary-color); background-color: rgba(39,
+174, 96, 0.05); transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0, 0,
+0, 0.1); } .service-option input:checked + .service-card .check-indicator {
+background-color: var(--primary-color); border-color: var(--primary-color); }
+.service-option input:checked + .service-card .check-indicator::after { content:
+'✓'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+color: white; font-size: 12px; } .form-actions { text-align: center; margin-top:
+30px; } .submit-btn { background-color: var(--primary-color); color: white;
+border: none; padding: 15px 40px; font-size: 18px; border-radius: 8px; cursor:
+pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap:
+10px; } .submit-btn:hover { background-color: #219653; transform:
+translateY(-3px); box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3); } .submit-btn i
+{ font-size: 16px; } /* Alert styling */ .alert { padding: 15px 20px;
+border-radius: 8px; margin-bottom: 20px; animation: fadeIn 0.5s ease-in-out;
+max-width: 900px; margin: 0 auto 20px; } .alert-success { background-color:
+#d4edda; color: #155724; border: 1px solid #c3e6cb; } .alert-error {
+background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to {
+opacity: 1; transform: translateY(0); } } /* Responsive adjustments */ @media
+(max-width: 768px) { .service-form-wrapper { border-radius: 10px; margin: 0
+15px; } .form-header { padding: 20px; } .modern-form { padding: 20px; }
+.services-grid { grid-template-columns: 1fr 1fr; gap: 15px; } } @media
+(max-width: 576px) { .services-grid { grid-template-columns: 1fr; } .page-hero
+h1 { font-size: 2.2rem; } } {% endblock %} {% block content %}
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <h1>أحصل على خدماتنا</h1>
+  </div>
+</section>
+
+<!-- Flash Messages -->
+{% with messages = get_flashed_messages(with_categories=true) %} {% if messages
+%} {% for category, message in messages %}
+<div class="alert alert-{{ category }}">{{ message }}</div>
+{% endfor %} {% endif %} {% endwith %}
+
+<!-- Services Form Section -->
+<div class="contact" id="أحصل على خدماتنا">
+  <div class="container">
+    <div class="service-form-wrapper">
+      <div class="form-header">
+        <h2 class="title">احصل على خدماتنا</h2>
+        <p class="subtitle">
+          املأ البيانات التالية للحصول على خدماتنا المتميزة
+        </p>
+      </div>
+
+      <form
+        action="{{ url_for('get_our_services') }}"
+        method="POST"
+        class="modern-form"
+      >
+        <div class="form-section">
+          <h3 class="section-title">البيانات الشخصية</h3>
+
+          <div class="user-details">
+            <div class="input-box">
+              <label for="fullName" class="details">الاسم الكامل</label>
+              <div class="input-container">
+                <i class="fas fa-user"></i>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="full_name"
+                  placeholder="أدخل اسمك بالكامل"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="input-box">
+              <label for="email" class="details">البريد الإلكتروني</label>
+              <div class="input-container">
+                <i class="fas fa-envelope"></i>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="أدخل بريدك الإلكتروني"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="input-box">
+              <label for="phone" class="details">رقم الهاتف</label>
+              <div class="input-container">
+                <i class="fas fa-phone-alt"></i>
+                <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  placeholder="أدخل رقم هاتفك"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3 class="section-title">الخدمات المتاحة</h3>
+          <p class="section-desc">اختر الخدمات التي ترغب في الحصول عليها</p>
+
+          <div class="services-grid">
+            <label class="service-option">
+              <input
+                type="checkbox"
+                name="services"
+                value="الاستشارات البيئية"
+              />
+              <div class="service-card">
+                <div class="service-icon">
+                  <i class="fas fa-leaf"></i>
+                </div>
+                <div class="service-info">
+                  <span>الاستشارات البيئية</span>
+                </div>
+                <div class="check-indicator"></div>
+              </div>
+            </label>
+
+            <label class="service-option">
+              <input
+                type="checkbox"
+                name="services"
+                value="الخدمات التعليمية"
+              />
+              <div class="service-card">
+                <div class="service-icon">
+                  <i class="fas fa-book"></i>
+                </div>
+                <div class="service-info">
+                  <span>الخدمات التعليمية</span>
+                </div>
+                <div class="check-indicator"></div>
+              </div>
+            </label>
+
+            <label class="service-option">
+              <input type="checkbox" name="services" value="التبرع المالي" />
+              <div class="service-card">
+                <div class="service-icon">
+                  <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <div class="service-info">
+                  <span>التبرع المالي</span>
+                </div>
+                <div class="check-indicator"></div>
+              </div>
+            </label>
+
+            <label class="service-option">
+              <input
+                type="checkbox"
+                name="services"
+                value="إحصائيات عامة عن تأثير الخدمات"
+              />
+              <div class="service-card">
+                <div class="service-icon">
+                  <i class="fas fa-chart-bar"></i>
+                </div>
+                <div class="service-info">
+                  <span>إحصائيات عامة عن تأثير الخدمات</span>
+                </div>
+                <div class="check-indicator"></div>
+              </div>
+            </label>
+
+            <label class="service-option">
+              <input
+                type="checkbox"
+                name="services"
+                value="مبادرة تحويل البلاستيك إلى منتجات"
+              />
+              <div class="service-card">
+                <div class="service-icon">
+                  <i class="fas fa-recycle"></i>
+                </div>
+                <div class="service-info">
+                  <span>مبادرة تحويل البلاستيك إلى منتجات</span>
+                </div>
+                <div class="check-indicator"></div>
+              </div>
+            </label>
+
+            <label class="service-option">
+              <input type="checkbox" name="services" value="التتبع" />
+              <div class="service-card">
+                <div class="service-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="service-info">
+                  <span>التتبع</span>
+                </div>
+                <div class="check-indicator"></div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i>
+            <span>سجّل معنا</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block scripts %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Animation for service cards when they come into view
+    const serviceCards = document.querySelectorAll(".service-card");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    serviceCards.forEach((card) => {
+      card.style.opacity = 0;
+      card.style.transform = "translateY(20px)";
+      card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+      observer.observe(card);
+    });
+
+    // Form validation
+    const form = document.querySelector(".modern-form");
+    form.addEventListener("submit", function (e) {
+      const checkboxes = form.querySelectorAll(
+        'input[name="services"]:checked'
+      );
+      if (checkboxes.length === 0) {
+        e.preventDefault();
+        alert("يرجى اختيار خدمة واحدة على الأقل");
+      }
+    });
+  });
+</script>
+{% endblock %}

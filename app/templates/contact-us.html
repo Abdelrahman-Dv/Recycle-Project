@@ -1,0 +1,206 @@
+{% extends "base.html" %} {% block title %}تواصل معنا - MCI{% endblock %} {%
+block extra_styles %} .page-hero { position: relative; height: 40vh; min-height:
+300px; background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+url('/static/Images/contact.jpg') no-repeat center center; background-size:
+cover; display: flex; align-items: center; justify-content: center; text-align:
+center; color: white; margin-bottom: 50px; } .page-hero h1 { font-size: 3rem;
+font-weight: 700; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); } .contact {
+padding: 50px 0 100px; direction: rtl; background-color: #f9f9f9; } .form {
+max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns:
+repeat(2, 1fr); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px
+rgba(0, 0, 0, 0.1); position: relative; } .contact-info { background-color:
+var(--secondary-color); padding: 50px 40px; color: white; } .text { font-size:
+2rem; font-weight: 600; margin-bottom: 20px; position: relative; } .text::after
+{ content: ''; position: absolute; height: 3px; width: 50px; background-color:
+var(--primary-color); bottom: -10px; right: 0; } .content { margin-bottom: 30px;
+line-height: 1.8; color: rgba(255, 255, 255, 0.9); } .info { margin-top: 50px; }
+.informition { display: flex; align-items: center; margin-bottom: 30px; } .icon
+{ width: 26px; height: 26px; margin-left: 15px; background-color:
+var(--primary-color); padding: 8px; border-radius: 50%; object-fit: contain;
+filter: brightness(0) invert(1); } .social-media { margin-top: 40px; }
+.social-media p { margin-bottom: 15px; font-weight: 500; } .social-icons {
+display: flex; margin-top: 15px; } .social-icons a { width: 40px; height: 40px;
+border-radius: 50%; background-color: rgba(255, 255, 255, 0.1); display: flex;
+align-items: center; justify-content: center; margin-left: 10px;
+text-decoration: none; color: white; transition: all 0.3s ease; } .social-icons
+a:hover { background-color: var(--primary-color); transform: translateY(-5px); }
+.contact-form { background-color: white; padding: 50px 40px; position: relative;
+} .circle { position: absolute; background-color: var(--primary-color);
+border-radius: 50%; z-index: 0; } .circle.one { width: 120px; height: 120px;
+top: 130px; right: -60px; opacity: 0.1; } .circle.two { width: 80px; height:
+80px; bottom: 70px; right: 30px; opacity: 0.1; } .contact-form form { position:
+relative; z-index: 1; } .input-container { margin-bottom: 30px; position:
+relative; } .input { width: 100%; outline: none; border: 2px solid #ddd;
+background-color: white; padding: 12px 15px; border-radius: 8px; font-size:
+16px; transition: all 0.3s ease; } .input:focus { border-color:
+var(--primary-color); box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2); }
+.input-container label { position: absolute; top: 12px; right: 15px; font-size:
+16px; color: #666; transition: all 0.3s ease; pointer-events: none; }
+.input-container span { position: absolute; top: 0; right: 25px;
+background-color: white; padding: 0 5px; font-size: 14px; color: #666;
+transition: all 0.3s ease; opacity: 0; } .input-container.textarea { height:
+150px; } .input-container.textarea textarea { height: 100%; resize: none; }
+.input:focus ~ label, .input:valid ~ label { top: -12px; font-size: 14px;
+opacity: 0; } .input:focus ~ span, .input:valid ~ span { opacity: 1; } .btn-1 {
+padding: 15px 40px; background-color: var(--primary-color); color: white;
+border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor:
+pointer; transition: all 0.3s ease; } .btn-1:hover { background-color: #219653;
+transform: translateY(-3px); box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3); }
+.alert { padding: 15px 20px; border-radius: 8px; margin-bottom: 20px; animation:
+fadeIn 0.5s ease-in-out; } .alert-success { background-color: #d4edda; color:
+#155724; border: 1px solid #c3e6cb; } .alert-error { background-color: #f8d7da;
+color: #721c24; border: 1px solid #f5c6cb; } @keyframes fadeIn { from { opacity:
+0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); }
+} @media (max-width: 992px) { .form { grid-template-columns: 1fr; }
+.contact-info { padding: 40px 30px; } .contact-form { padding: 40px 30px; } }
+@media (max-width: 576px) { .page-hero h1 { font-size: 2.2rem; } .contact {
+padding: 30px 0 70px; } .form { box-shadow: none; } .contact-info, .contact-form
+{ padding: 30px 20px; border-radius: 15px; margin-bottom: 20px; } .contact-info
+{ margin: 0 15px 20px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+.contact-form { margin: 0 15px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+.circle.one, .circle.two { display: none; } .text { font-size: 1.5rem; } } {%
+endblock %} {% block content %}
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <h1>تواصل معنا</h1>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<div class="contact">
+  <div class="container">
+    <div class="form">
+      <div class="contact-info">
+        <h3 class="text">دعونا نتواصل</h3>
+        <p class="content">
+          نشكرك على اهتمامك بالتواصل معنا. نحن هنا لمساعدتك في رحلتك نحو عالم
+          أنظف وأكثر استدامة. سواء كنت تبحث عن معلومات حول إعادة التدوير، أو
+          ترغب في المشاركة في مبادراتنا البيئية، أو لديك أي استفسارات أخرى،
+          فريقنا على استعداد لتقديم الدعم اللازم.
+        </p>
+        <div class="info">
+          <div class="informition">
+            <img
+              src="{{ url_for('static', filename='Images/location.png') }}"
+              class="icon"
+              alt="Location"
+            />
+            <p>القاهرة الجديدة، التجمع الأول، القاهرة</p>
+          </div>
+          <div class="informition">
+            <img
+              src="{{ url_for('static', filename='Images/email.png') }}"
+              class="icon"
+              alt="Email"
+            />
+            <p>info@mci-egypt.com</p>
+          </div>
+          <div class="informition">
+            <img
+              src="{{ url_for('static', filename='Images/phone.png') }}"
+              class="icon"
+              alt="Phone"
+            />
+            <p>+20 123 456 7890</p>
+          </div>
+          <div class="social-media">
+            <p>تواصل معنا عبر منصات التواصل الاجتماعي:</p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <span class="circle one"></span>
+        <span class="circle two"></span>
+
+        <!-- Add flash messages support -->
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %} {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %} {% endif %} {% endwith %}
+
+        <form action="{{ url_for('contact_us') }}" method="POST">
+          <h3 class="text">أرسل رسالتك</h3>
+          <div class="input-container">
+            <input type="text" name="name" class="input" required />
+            <label for="name">الاسم</label>
+            <span>الاسم</span>
+          </div>
+          <div class="input-container">
+            <input type="email" name="email" class="input" required />
+            <label for="email">البريد الإلكتروني</label>
+            <span>البريد الإلكتروني</span>
+          </div>
+          <div class="input-container">
+            <input type="tel" name="phone" class="input" required />
+            <label for="phone">رقم الهاتف</label>
+            <span>رقم الهاتف</span>
+          </div>
+          <div class="input-container textarea">
+            <textarea name="message" class="input" required></textarea>
+            <label for="message">الرسالة</label>
+            <span>الرسالة</span>
+          </div>
+          <input type="submit" value="إرسال" class="btn-1" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block scripts %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Animated labels
+    const inputs = document.querySelectorAll(".input");
+
+    inputs.forEach((input) => {
+      input.addEventListener("focus", function () {
+        this.classList.add("focus");
+      });
+
+      input.addEventListener("blur", function () {
+        if (this.value === "") {
+          this.classList.remove("focus");
+        }
+      });
+
+      // Check if input has value on page load (e.g. after form submission)
+      if (input.value !== "") {
+        input.classList.add("focus");
+      }
+    });
+
+    // Form validation
+    const form = document.querySelector("form");
+    form.addEventListener("submit", function (e) {
+      const nameInput = document.querySelector('input[name="name"]');
+      const emailInput = document.querySelector('input[name="email"]');
+      const phoneInput = document.querySelector('input[name="phone"]');
+      const messageInput = document.querySelector('textarea[name="message"]');
+
+      if (
+        nameInput.value.trim() === "" ||
+        emailInput.value.trim() === "" ||
+        phoneInput.value.trim() === "" ||
+        messageInput.value.trim() === ""
+      ) {
+        e.preventDefault();
+        alert("يرجى ملء جميع الحقول المطلوبة");
+      }
+
+      // Basic email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(emailInput.value.trim())) {
+        e.preventDefault();
+        alert("يرجى إدخال بريد إلكتروني صحيح");
+      }
+    });
+  });
+</script>
+{% endblock %}

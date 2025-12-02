@@ -1,0 +1,167 @@
+{% extends "base.html" %} {% block title %}خدماتنا - MCI{% endblock %} {% block
+extra_styles %} .page-hero { position: relative; height: 40vh; min-height:
+300px; background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+url('/static/Images/services.jpg') no-repeat center center; background-size:
+cover; display: flex; align-items: center; justify-content: center; text-align:
+center; color: white; margin-bottom: 50px; } .page-hero h1 { font-size: 3rem;
+font-weight: 700; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); }
+.services-section { padding: 70px 0; background-color: #f9f9f9; } .section-title
+{ text-align: center; margin-bottom: 50px; position: relative; } .section-title
+h2 { font-size: 2.5rem; font-weight: 700; color: var(--primary-color);
+margin-bottom: 15px; display: inline-block; position: relative; } .section-title
+h2::after { content: ""; position: absolute; bottom: -10px; left: 50%;
+transform: translateX(-50%); width: 80px; height: 3px; background-color:
+var(--primary-color); } .services-grid { display: grid; grid-template-columns:
+repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; } .service-card {
+background-color: white; border-radius: var(--border-radius); box-shadow:
+var(--box-shadow); padding: 30px 20px; text-align: center; transition:
+var(--transition); position: relative; overflow: hidden; height: 100%; display:
+flex; flex-direction: column; align-items: center; } .service-card::before {
+content: ""; position: absolute; top: 0; right: 0; width: 0; height: 5px;
+background-color: var(--primary-color); transition: width 0.3s ease; }
+.service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px
+rgba(0, 0, 0, 0.1); } .service-card:hover::before { width: 100%; } .service-icon
+{ width: 90px; height: 90px; background-color: var(--primary-color);
+border-radius: 50%; display: flex; align-items: center; justify-content: center;
+margin: 0 auto 25px; transition: var(--transition); } .service-card:hover
+.service-icon { background-color: var(--secondary-color); transform:
+rotateY(360deg); transition: transform 0.8s, background-color 0.3s; }
+.service-icon i { font-size: 2rem; color: white; } .service-title { font-size:
+1.4rem; color: var(--secondary-color); margin-bottom: 15px; font-weight: 600; }
+.service-description { color: #666; line-height: 1.7; } .service-link {
+margin-top: 20px; color: var(--primary-color); font-weight: 600;
+text-decoration: none; display: inline-flex; align-items: center; transition:
+var(--transition); } .service-link i { margin-right: 5px; transition:
+var(--transition); } .service-link:hover { color: var(--secondary-color); }
+.service-link:hover i { transform: translateX(5px); } .cta-strip {
+background-color: var(--primary-color); padding: 30px 0; margin-top: 80px;
+text-align: center; color: white; } .cta-content { display: flex; align-items:
+center; justify-content: space-between; } .cta-text { font-size: 1.5rem;
+font-weight: 600; } .cta-button { background-color: white; color:
+var(--primary-color); font-weight: 600; padding: 12px 25px; border-radius:
+var(--border-radius); text-decoration: none; transition: var(--transition); }
+.cta-button:hover { background-color: var(--secondary-color); color: white; }
+@media (max-width: 768px) { .services-grid { grid-template-columns:
+repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; } .cta-content {
+flex-direction: column; } .cta-text { margin-bottom: 15px; text-align: center; }
+} {% endblock %} {% block content %}
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <h1>خدماتنا المميزة</h1>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>ماذا نقدم؟</h2>
+    </div>
+
+    <div class="services-grid">
+      <!-- Service 1 -->
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-leaf"></i>
+        </div>
+        <h3 class="service-title">الاستشارات البيئية</h3>
+        <p class="service-description">
+          نقدم استشارات متخصصة في مجال إعادة التدوير والحفاظ على البيئة من خلال
+          خبراء متخصصين في المجال البيئي.
+        </p>
+        <a href="{{ url_for('get_our_services') }}" class="service-link">
+          احجز استشارة <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-truck"></i>
+        </div>
+        <h3 class="service-title">التتبع</h3>
+        <p class="service-description">
+          خدمة متكاملة لاستلام المخلفات وإمكانية تتبع عمليات إعادة التدوير في كل
+          مرحلة من مراحلها.
+        </p>
+        <a href="{{ url_for('get_our_services') }}" class="service-link">
+          اطلب الخدمة <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-share"></i>
+        </div>
+        <h3 class="service-title">تحويل البلاستيك إلى منتجات</h3>
+        <p class="service-description">
+          مبادرة مبتكرة لجمع النفايات البلاستيكية وتحويلها إلى منتجات جديدة ذات
+          قيمة وصديقة للبيئة.
+        </p>
+        <a href="{{ url_for('get_our_services') }}" class="service-link">
+          تعرف على المنتجات <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-chart-simple"></i>
+        </div>
+        <h3 class="service-title">الإحصائيات</h3>
+        <p class="service-description">
+          نوفر إحصائيات دقيقة وشاملة عن تأثير خدماتنا والمشاريع البيئية على
+          المجتمع والبيئة.
+        </p>
+        <a href="{{ url_for('get_our_services') }}" class="service-link">
+          شاهد الإحصائيات <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-hand-holding-heart"></i>
+        </div>
+        <h3 class="service-title">التبرع المالي</h3>
+        <p class="service-description">
+          برنامج تبرعات لدعم مشاريع إعادة التدوير والحفاظ على البيئة، حيث يمكنك
+          المساهمة في صناعة مستقبل مستدام.
+        </p>
+        <a href="{{ url_for('get_our_services') }}" class="service-link">
+          تبرع الآن <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <h3 class="service-title">خدمات تعليمية</h3>
+        <p class="service-description">
+          قسم تعليمي متكامل يضم مقالات وفيديوهات توعوية عن إعادة التدوير وأهميته
+          وكيفية المساهمة في الحفاظ على البيئة.
+        </p>
+        <a href="{{ url_for('environmental') }}" class="service-link">
+          استكشف المحتوى التعليمي <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Strip -->
+<div class="cta-strip">
+  <div class="container">
+    <div class="cta-content">
+      <div class="cta-text">هل أنت مستعد للحصول على خدماتنا؟</div>
+      <a href="{{ url_for('get_our_services') }}" class="cta-button"
+        >احصل على الخدمة الآن</a
+      >
+    </div>
+  </div>
+</div>
+{% endblock %}
